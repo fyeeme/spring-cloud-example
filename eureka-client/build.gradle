@@ -40,3 +40,8 @@ dependencyManagement {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+bootRun {
+    args += ["--server.port=${project.port}"]
+}
+
