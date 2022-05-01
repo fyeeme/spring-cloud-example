@@ -1,8 +1,10 @@
-# Getting Started
+# spring cloud 
+
+this project is based on spring cloud 2021.0.2 and jdk 11
 
 ### Brief Introduction
 
-this project aims to learn spring cloud series. and will continued update.
+this project aims to learn spring cloud series. and will be continued update.
 
 # Table of content
 
@@ -14,10 +16,10 @@ eureka
 - [eureka-client](eureka-client/HELP.md)
 - [eureka-consumer](eureka-consumer/HELP.md)
 
-consul 
+consul
 
 - [consul][https://learn.hashicorp.com/tutorials/consul/get-started-install]
-  
+
 ```shell
 # startup consul server
 ./console agent dev
@@ -25,6 +27,7 @@ consul
 ./console leave
 
 ```
+
 - [consul-client](consul-client/HELP.md)
 - [consul-consumer](consul-consumer/HELP.md)
 

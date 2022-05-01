@@ -20,11 +20,13 @@ repositories {
 
 ext {
 	set('springCloudVersion', "2021.0.2")
+	set('aliabaCloudVersion', '2.2.7.RELEASE')
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
+	implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'
+	implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -34,6 +36,7 @@ dependencies {
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${aliabaCloudVersion}"
 	}
 }
 
