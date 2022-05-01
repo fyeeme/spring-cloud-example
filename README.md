@@ -16,6 +16,7 @@ eureka
 - [eureka-client](eureka-client/HELP.md)
 - [eureka-consumer](eureka-consumer/HELP.md)
 - [eureka-consumer-ribbon](eureka-consumer-ribbon/HELP.md)
+- [eureka-consumer-feign](eureka-consumer-feign/HELP.md)
 
 consul
 
@@ -32,3 +33,9 @@ consul
 - [consul-client](consul-client/HELP.md)
 - [consul-consumer](consul-consumer/HELP.md)
 
+
+
+### config 
+
+- [config-server](config-server/HELP.md)
+- [config-client](config-client/HELP.md)
