@@ -15,6 +15,7 @@ eureka
 - [eureka-server](eureka-server/HELP.md)
 - [eureka-client](eureka-client/HELP.md)
 - [eureka-consumer](eureka-consumer/HELP.md)
+- [eureka-consumer-ribbon](eureka-consumer-ribbon/HELP.md)
 
 consul
 
