@@ -6,6 +6,8 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 
 @RestController
 @Slf4j
@@ -19,5 +21,12 @@ public class DiscoveryController {
         String services = String.format("Services: %s", discoveryClient.getServices());
         log.info("{}", services);
         return services;
+    }
+
+    @GetMapping("/fallback/dc")
+    public String fallbackDc() throws InterruptedException {
+        // Thread.sleep(TimeUnit.SECONDS.toMillis(5L));
+        TimeUnit.SECONDS.sleep(20L);
+        return "fallbackDc";
     }
 }

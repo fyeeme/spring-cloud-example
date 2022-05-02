@@ -3,8 +3,8 @@ package com.fyeeme.feign;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient("eureka-client")
+@FeignClient(value = "eureka-client", fallbackFactory = DcClientFallback.class)
 public interface DcClient {
-    @GetMapping("/dc")
+    @GetMapping("/fallback/dc")
     String consumer();
 }
