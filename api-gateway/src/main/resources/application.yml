@@ -1,0 +1,27 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+server:
+  port: 8105
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # use netflix eureka discovery service
+          lowerCaseServiceId: true
+      routes:
+        - id: eureka-client
+          uri: lb://eureka-client	 # netflix eureka correspondent service
+          predicates:
+            - Path=/client/** # how we will map the url to the target service
+        - id: eureka-consumer-feign
+          uri: lb://eureka-consumer-feign
+          predicates:
+            - Path=/consumer/**
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

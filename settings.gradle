@@ -5,4 +5,5 @@ include 'eureka-consumer-feign'
 include 'config-server'
 include 'config-client'
 include 'eureka-consumer-ribbon-hystrix'
+include 'api-gateway'
 
