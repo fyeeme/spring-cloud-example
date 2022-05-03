@@ -43,3 +43,7 @@ consul
 
 ### api gateway
  -[spring-cloud-gateway](<api-gateway/HELP.md)
+
+### spring cloud stream
+
+ - [spring-cloud-stream-rabbit](stream-rabbit/HELP.md)

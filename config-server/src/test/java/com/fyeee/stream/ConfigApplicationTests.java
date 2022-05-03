@@ -1,4 +1,4 @@
-package com.fyeee.config;
+package com.fyeee.stream;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
