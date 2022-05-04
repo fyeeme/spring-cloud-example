@@ -8,4 +8,5 @@ include 'eureka-consumer-ribbon-hystrix'
 include 'api-gateway'
 include 'stream-rabbit'
 include 'stream-rabbit-consumer'
+include 'zipkin-server'
 
