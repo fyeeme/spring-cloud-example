@@ -47,3 +47,8 @@ consul
 ### spring cloud stream
 
  - [spring-cloud-stream-rabbit](stream-rabbit/HELP.md)
+
+
+### 分布式服务跟踪
+ 
+ - [sleuth-zipkin](eureka-consumer-feign/HELP.md)
