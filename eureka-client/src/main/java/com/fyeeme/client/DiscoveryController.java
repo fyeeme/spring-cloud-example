@@ -25,7 +25,7 @@ public class DiscoveryController {
 
     @GetMapping("/client/dc")
     public String fallbackDc() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(1L);
+        TimeUnit.SECONDS.sleep(5L);
         return "fallbackDc";
     }
 }

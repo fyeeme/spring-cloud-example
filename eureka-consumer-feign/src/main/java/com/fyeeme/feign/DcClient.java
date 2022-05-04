@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient(value = "eureka-client", fallbackFactory = DcClientFallback.class)
 public interface DcClient {
-    @GetMapping("/fallback/dc")
+    @GetMapping("/client/dc")
     String consumer();
 }
