@@ -34,7 +34,6 @@ consul
 - [consul-consumer](consul-consumer/HELP.md)
 
 
-
 ### config 
 
 - [config-server](config-server/HELP.md)
@@ -52,3 +51,14 @@ consul
 ### 分布式服务跟踪
  
  - [sleuth-zipkin](eureka-consumer-feign/HELP.md)
+
+### circuit breakers
+
+Resilience4J
+ - [consul-client](consul-client/HELP.md)
+
+Sentinel
+ - [consul-sever](config-server/HELP.md)
+
+Netfix Hystrix
+  - [eureka-consumer-ribbon-hystrix](eureka-consumer-ribbon-hystrix/HELP.md)

@@ -9,4 +9,5 @@ include 'api-gateway'
 include 'stream-rabbit'
 include 'stream-rabbit-consumer'
 include 'zipkin-server'
+include 'eureka-consumer-feign-sentinal'
 
