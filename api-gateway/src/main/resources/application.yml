@@ -1,7 +1,3 @@
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8000/eureka/
 server:
   port: 8105
 spring:
@@ -11,17 +7,30 @@ spring:
     gateway:
       discovery:
         locator:
+          # Spring Cloud Gateway 提供了类似于 Zuul 那种为所有服务转发的功能
+          # http://网关地址/服务名称(大写)/**，转发所有服务
           enabled: true # use netflix eureka discovery service
           lowerCaseServiceId: true
       routes:
         - id: eureka-client
-          uri: lb://eureka-client	 # netflix eureka correspondent service
+          uri: lb://eureka-client  # netflix eureka correspondent service
           predicates:
             - Path=/client/** # how we will map the url to the target service
         - id: eureka-consumer-feign
           uri: lb://eureka-consumer-feign
           predicates:
             - Path=/consumer/**
+          filters:
+            - name: retry
+              args:
+                reties: 2
+                methods: GET, POST, PUT
+                statuses: INTERNAL_SERVER_ERROR, BAD_REQUEST
+                series: SERVER_ERROR
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
 logging:
   level:
     org.springframework.cloud.gateway: debug
