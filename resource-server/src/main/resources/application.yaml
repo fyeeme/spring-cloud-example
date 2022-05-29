@@ -1,0 +1,19 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: resourceServer
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+#          jwk-set-uri: http://localhost:9000/oauth2/jwks
+         issuer-uri: http://localhost:9000
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+#    org.springframework.boot.autoconfigure: DEBUG

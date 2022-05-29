@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: eureka-client
+server:
+  port: 8001
+
+eureka:
+  client:
+    # 续约超时，最大尝试次数，默认10
+    heartbeat-executor-exponential-back-off-bound: 10
+    # 首次服务注册延迟时间， 默认值 40s
+    initial-instance-info-replication-interval-seconds: 40
+    # 注册任务线程时间间隔，默认是30s
+    instance-info-replication-interval-seconds: 30
+    # 是否使用守护线程监听Eureka 客户端状态, 默认true
+    on-demand-update-status-change: true
+    # 当服务超时候，最大尝试次数
+    cache-refresh-executor-exponential-back-off-bound: 10
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+  instance:
+    # 续约时间间隔，默认30s
+    lease-renewal-interval-in-seconds: 30

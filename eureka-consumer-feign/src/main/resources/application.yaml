@@ -1,0 +1,18 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: eureka-consumer-feign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+feign:
+  circuitbreaker:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        loggerLevel: full
+        readTimeout: 2000

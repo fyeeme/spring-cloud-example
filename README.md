@@ -62,3 +62,8 @@ Sentinel
 
 Netfix Hystrix
   - [eureka-consumer-ribbon-hystrix](eureka-consumer-ribbon-hystrix/HELP.md)
+
+### OAUTH2
+- [auth-server](auth-server/HELP.md)
+- [resource-server](resource-server/HELP.md)
+- [auth-client](https://github.com/fyeeme/vite-quasar)
