@@ -14,6 +14,8 @@ logging:
   level:
     root: INFO
     org.springframework.web: INFO
-    org.springframework.security: DEBUG
-    org.springframework.security.oauth2: DEBUG
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+    org.springframework.web.client.RestTemplate: TRACE
+
 #    org.springframework.boot.autoconfigure: DEBUG
