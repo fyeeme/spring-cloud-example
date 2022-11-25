@@ -25,6 +25,7 @@ import org.springframework.security.oauth2.server.authorization.client.Registere
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
 import org.springframework.security.oauth2.server.authorization.config.ClientSettings;
 import org.springframework.security.oauth2.server.authorization.config.ProviderSettings;
+import org.springframework.security.oauth2.server.authorization.config.TokenSettings;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 
@@ -62,7 +63,9 @@ public class AuthorizationServerConfig {
                         .scope(OidcScopes.OPENID)
                         .scope("message.read")
                         .scope("message.write")
-                        .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
+                        //refresh token can be used only once.
+                        .tokenSettings(TokenSettings.builder().reuseRefreshTokens(false).build())
+                        .clientSettings(ClientSettings.builder().requireAuthorizationConsent(false).build())
                         .build();
 
         JdbcRegisteredClientRepository registeredClientRepository = new JdbcRegisteredClientRepository(jdbcTemplate);

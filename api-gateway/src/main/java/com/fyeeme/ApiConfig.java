@@ -12,8 +12,8 @@ import reactor.core.publisher.Mono;
 
 @Configuration
 public class ApiConfig {
-    public static final Logger log = LoggerFactory.getLogger(ApiConfig.class);
-
+    public  static final   Logger log = LoggerFactory.getLogger(ApiConfig.class);
+    private  volatile String username;
     @Bean
     public GlobalFilter customFilter() {
         return new CustomGlobalFilter();

@@ -21,13 +21,12 @@ public class WebSecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .mvcMatcher("/messages/**")
-                .authorizeHttpRequests((authorize) -> authorize
-                        .antMatchers(HttpMethod.GET, "/message/**").hasAuthority("SCOPE_message:read")
-                        .antMatchers(HttpMethod.POST, "/message/**").hasAuthority("SCOPE_message:write")
-                        .anyRequest().authenticated()
-                )
-                .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
+                .securityMatcher("/messages/**")
+                .authorizeHttpRequests()
+                .requestMatchers("/messages/**").hasAuthority("SCOPE_message.read")
+                .and()
+                .oauth2ResourceServer()
+                .jwt();
         return http.build();
     }
 
